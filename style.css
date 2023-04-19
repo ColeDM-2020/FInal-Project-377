@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #ffffff;
+  font-size: 16px;
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.header {
+  padding: 1px;
+  text-align: center;
+  background: #013369;
+  color: #ffffff;
+  font-size: 30px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.buttonbar {
+  text-align: center;
+  background-color: #d50a0a;
+  width: 100%;
+  height: fit-content;
+  padding: 1rem;
+}
+
+.container {
+  width: 100%;
+  height: 150vh;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.paneleft {
+  width: 50%;
+  height: 150vh;
+  background-color: #ffffff;
+  border: 3px solid;
+  border-right: 2px solid;
+  align-items: center;
+  text-align: center;
+  border-color: #d50a0a;
+}
+
+.paneright {
+  width: 50%;
+  height: 150vh;
+  background-color: #ffffff;
+  border: 3px solid;
+  align-items: center;
+  text-align: center;
+  border-left: 2px solid;
+  border-color: #d50a0a;
+}
+
+body {
+  margin: 0;
+}
+
+.subhead {
+  padding: 30px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.text {
+  font-size: 18px;
+  text-align: center;
+}
+
+.img {
+  width: 400px;
+  height: 400px;
+  align-items: center;
+  border: 1px solid;
+}
+
+.box {
+  background-color: rgb(255, 255, 255);
+  padding: 50px;
+  width: fit-content;
+  height:fit-content;
+  margin: 0 auto;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.table{
+  box-shadow: 0 0 10px #ffffff29;
+  border-collapse: collapse;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.table thead th {
+  background: #d50a0a;
+  color: #ffffff;
+}
+
+.table td,
+.table th {
+  padding: 10px 20px;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background: #eeeeee;
+}
+
+.table tbody tr:last-of-type {
+  border-bottom: 2px solid #d50a0a;
+}
