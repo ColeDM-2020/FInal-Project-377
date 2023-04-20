@@ -87,6 +87,8 @@ body {
   width: fit-content;
   height:fit-content;
   margin: 0 auto;
+  flex-direction: column;
+  display: flex;
 }
 
 a {
@@ -97,6 +99,8 @@ a {
 .statstable{
   margin: 0 auto;
   max-width: 1006px;
+  display: flex;
+  align-items: center;
 }
 
 table {
