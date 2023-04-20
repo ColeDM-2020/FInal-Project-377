@@ -3,8 +3,13 @@ function injectHTML(list){
   const target = document.querySelector('.stats_list');
   target.innerHTML = '';
   list.forEach((item) => {
-    const str = `<table>${item.displayName}: ${item.value}</table>`;
-    target.innerHTML += str
+    const str = `<table>
+                  <tr>
+                    <td>${item.displayName}</td>
+                    <td>${item.value}</td>
+                  </tr>
+                </table>`;
+    target.innerHTML = target.innerHTML + str
   })
 }
 
