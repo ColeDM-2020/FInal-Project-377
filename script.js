@@ -8,18 +8,17 @@ function injectHTML(list){
   })
 }
 
-function chartTime() {
-
-}
-
 async function mainEvent() {
   const mainForm = document.querySelector('.main_form');
-  const generatePassYard = document.querySelector('#gen_passyard')
+  const generatePassYard = document.querySelector('#gen_passyard');
+  const ctx = document.getElementById('myChart');
 
   let passYardListp = [];
+  let passYardListe = [];
 
   generatePassYard.addEventListener('click', async (submitEvent) => {
-    p2004List = [];
+
+     /*Peyton Manning*/
 
     let p2004 = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2004/types/2/athletes/1428/statistics/0');
 
@@ -110,10 +109,130 @@ async function mainEvent() {
     parsedp2015Data = JSON.parse(p2015Data);
     datap2015 = parsedp2015Data.splits.categories[1].stats[18].value;
     passYardListp.push(datap2015);
-    console.log(passYardListp)
+
+    /*Eli Manning*/
+
+    let e2004 = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2004/types/2/athletes/5526/statistics/0');
+
+    e2004List = await e2004.json();
+    e2004Data = JSON.stringify(e2004List)
+    parsede2004Data = JSON.parse(e2004Data);
+    datae2004 = parsede2004Data.splits.categories[1].stats[18].value;
+    passYardListe.push(datae2004);
+
+    let e2005 = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2005/types/2/athletes/5526/statistics/0');
+
+    e2005List = await e2005.json();
+    e2005Data = JSON.stringify(e2005List)
+    parsede2005Data = JSON.parse(e2005Data);
+    datae2005 = parsede2005Data.splits.categories[1].stats[18].value;
+    passYardListe.push(datae2005);
     
+    let e2006 = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2006/types/2/athletes/5526/statistics/0');
+
+    e2006List = await e2006.json();
+    e2006Data = JSON.stringify(e2006List)
+    parsede2006Data = JSON.parse(e2006Data);
+    datae2006 = parsede2006Data.splits.categories[1].stats[18].value;
+    passYardListe.push(datae2006);
+
+    let e2007 = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2007/types/2/athletes/5526/statistics/0');
+
+    e2007List = await e2007.json();
+    e2007Data = JSON.stringify(e2007List)
+    parsede2007Data = JSON.parse(e2007Data);
+    datae2007 = parsede2007Data.splits.categories[1].stats[18].value;
+    passYardListe.push(datae2007);
+
+    let e2008 = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2008/types/2/athletes/5526/statistics/0');
+
+    e2008List = await e2008.json();
+    e2008Data = JSON.stringify(e2008List)
+    parsede2008Data = JSON.parse(e2008Data);
+    datae2008 = parsede2008Data.splits.categories[1].stats[18].value;
+    passYardListe.push(datae2008);
+
+    let e2009 = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2009/types/2/athletes/5526/statistics/0');
+
+    e2009List = await e2009.json();
+    e2009Data = JSON.stringify(e2009List)
+    parsede2009Data = JSON.parse(e2009Data);
+    datae2009 = parsede2009Data.splits.categories[1].stats[18].value;
+    passYardListe.push(datae2009);
+
+    let e2010 = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2010/types/2/athletes/5526/statistics/0');
+
+    e2010List = await e2010.json();
+    e2010Data = JSON.stringify(e2010List)
+    parsede2010Data = JSON.parse(e2010Data);
+    datae2010 = parsede2010Data.splits.categories[1].stats[18].value;
+    passYardListe.push(datae2010);
+
+    let e2011 = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2011/types/2/athletes/5526/statistics/0');
+
+    e2011List = await e2011.json();
+    e2011Data = JSON.stringify(e2011List)
+    parsede2011Data = JSON.parse(e2011Data);
+    datae2011 = parsede2011Data.splits.categories[1].stats[18].value;
+    passYardListe.push(datae2011);
+
+    let e2012 = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2012/types/2/athletes/5526/statistics/0');
+
+    e2012List = await e2012.json();
+    e2012Data = JSON.stringify(e2012List)
+    parsede2012Data = JSON.parse(e2012Data);
+    datae2012 = parsede2012Data.splits.categories[1].stats[18].value;
+    passYardListe.push(datae2012);
+
+    let e2013 = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2013/types/2/athletes/5526/statistics/0');
+
+    e2013List = await e2013.json();
+    e2013Data = JSON.stringify(e2013List)
+    parsede2013Data = JSON.parse(e2013Data);
+    datae2013 = parsede2013Data.splits.categories[1].stats[18].value;
+    passYardListe.push(datae2013);
+
+    let e2014 = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2014/types/2/athletes/5526/statistics/0');
+
+    e2014List = await e2014.json();
+    e2014Data = JSON.stringify(e2014List)
+    parsede2014Data = JSON.parse(e2014Data);
+    datae2014 = parsede2014Data.splits.categories[1].stats[18].value;
+    passYardListe.push(datae2014);
+
+    let e2015 = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2015/types/2/athletes/5526/statistics/0');
+
+    e2015List = await e2015.json();
+    e2015Data = JSON.stringify(e2015List)
+    parsede2015Data = JSON.parse(e2015Data);
+    datae2015 = parsede2015Data.splits.categories[1].stats[18].value;
+    passYardListe.push(datae2015);
+
+    passYardListp = [...new Set(passYardListp)];
+    passYardListe = [...new Set(passYardListe)];
+
+    console.log(passYardListp);
+    console.log(passYardListe);
   })
 
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'],
+      datasets: [{
+        label: '# of Votes',
+        data: passYardListp,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
 }
 
 document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests
