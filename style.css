@@ -33,6 +33,12 @@ h2 {
   text-align: center;
 }
 
+.center {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .buttonbar {
   text-align: center;
   background-color: #d50a0a;

@@ -11,6 +11,7 @@ function injectHTML(list){
 async function mainEvent() {
   const mainForm = document.querySelector('.main_form');
   const generatePassYard = document.querySelector('#gen_passyard');
+  const displayChartButton = document.querySelector('#dis_chart');
   const ctx = document.getElementById('myChart');
 
   let passYardListp = [];
@@ -214,25 +215,32 @@ async function mainEvent() {
     console.log(passYardListp);
     console.log(passYardListe);
   })
-
-  new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: ['2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'],
-      datasets: [{
-        label: '# of Votes',
-        data: passYardListp,
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
+  
+  displayChartButton.addEventListener('click', async (event) => {
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'],
+        datasets: [
+          {
+            label: 'Peyton Passing Yards',
+            data: passYardListp,
+            borderWidth: 1},
+          {
+            label: 'Eli Passing Yards',
+            data: passYardListe,
+            borderWidth: 1
+          }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
         }
       }
-    }
-  });
+    });
+  })
 }
 
 document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests
