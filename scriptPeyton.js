@@ -15,7 +15,6 @@ function injectHTML(list){
 
 async function mainEvent() { 
   const mainForm = document.querySelector('.main_form');
-  const loadDataButton = document.querySelector('#data_load');
   const generalDataButton = document.querySelector('#general');
   const passingDataButton = document.querySelector('#passing');
   const rushingDataButton = document.querySelector('#rushing');
@@ -26,27 +25,19 @@ async function mainEvent() {
   
   let currentList = []; 
 
-  /* We need to listen to an "event" to have something happen in our page - here we're listening for a "submit" */
-  loadDataButton.addEventListener('click', async (submitEvent) => { 
-    
-    // this is substituting for a "breakpoint" - it prints to the browser to tell us we successfully submitted the form
-    console.log('Loading Data'); 
+  // Basic GET request - this replaces the form Action
+  let results = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/1428/statistics/0');
 
-    // Basic GET request - this replaces the form Action
-    let results = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/1428/statistics/0');
+  // This changes the response from the GET into data we can use - an "object"
+  currentList = await results.json();
 
-    // This changes the response from the GET into data we can use - an "object"
-    currentList = await results.json();
+  storedData = JSON.stringify(currentList)
+  parsedData = JSON.parse(storedData);
 
-    storedData = JSON.stringify(currentList)
-    parsedData = JSON.parse(storedData);
+  console.log(parsedData)
 
-    console.log(parsedData)
-
-    dataDict = parsedData.splits.categories;
-    console.log(dataDict); 
-
-  });
+  dataDict = parsedData.splits.categories;
+  console.log(dataDict); 
 
   generalDataButton.addEventListener('click', (event) => {
     console.log('Generate Stats');
