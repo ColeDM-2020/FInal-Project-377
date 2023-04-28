@@ -2,15 +2,20 @@ function injectHTML(list){
   console.log('fired injectHTML')
   const target = document.querySelector('.stats_list');
   target.innerHTML = '';
+  let str = `<table>
+              <thead>
+                <th>Stat Name</th>
+                <th>Stat Value</th>
+              </thead>`
   list.forEach((item) => {
-    const str = `<table>
-                  <tr>
-                    <td>${item.displayName}</td>
-                    <td>${item.value}</td>
-                  </tr>
-                </table>`;
-    target.innerHTML = target.innerHTML + str
+    str += `<tr>
+              <td>${item.displayName}</td>
+              <td>${item.value}</td>
+            </tr>`;
   })
+  str += `</table>`;
+  target.innerHTML = target.innerHTML + str;
+  
 }
 
 async function mainEvent() { 
