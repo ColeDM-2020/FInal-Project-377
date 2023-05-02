@@ -18,6 +18,8 @@ function injectHTML(list){
   
 }
 
+let currentList = []; 
+
 async function mainEvent() { 
   const mainForm = document.querySelector('.main_form');
   const generalDataButton = document.querySelector('#general');
@@ -27,17 +29,18 @@ async function mainEvent() {
   const defensiveDataButton = document.querySelector('#defensive');
   const defensiveInterceptionsDataButton = document.querySelector('#defensiveInterceptions');
   const scoringDataButton = document.querySelector('#scoring');
-  
-  let currentList = []; 
 
   // Basic GET request - this replaces the form Action
-  let results = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/1428/statistics/0');
+  const results = await fetch('https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes/1428/statistics/0');
 
   // This changes the response from the GET into data we can use - an "object"
-  currentList = await results.json();
+  const storedList = await results.json();
 
-  storedData = JSON.stringify(currentList)
-  parsedData = JSON.parse(storedData);
+  console.log('Loading Data'); 
+
+  localStorage.setItem('storedData', JSON.stringify(storedList));
+  
+  parsedData = storedList
 
   console.log(parsedData)
 
@@ -45,49 +48,49 @@ async function mainEvent() {
   console.log(dataDict); 
 
   generalDataButton.addEventListener('click', (event) => {
-    console.log('Generate Stats');
+    console.log('Generate General Stats');
     dataList = dataDict[0].stats;
     console.log(dataList);
     injectHTML(dataList);
   })
 
   passingDataButton.addEventListener('click', (event) => {
-    console.log('Generate Stats');
+    console.log('Generate Passing Stats');
     dataList = dataDict[1].stats;
     console.log(dataList);
     injectHTML(dataList);
   })
   
   rushingDataButton.addEventListener('click', (event) => {
-    console.log('Generate Stats');
+    console.log('Generate Rushing Stats');
     dataList = dataDict[2].stats;
     console.log(dataList);
     injectHTML(dataList);
   })
 
   receivingDataButton.addEventListener('click', (event) => {
-    console.log('Generate Stats');
+    console.log('Generate Receiving Stats');
     dataList = dataDict[3].stats;
     console.log(dataList);
     injectHTML(dataList);
   })
 
   defensiveDataButton.addEventListener('click', (event) => {
-    console.log('Generate Stats');
+    console.log('Generate Defensive Stats');
     dataList = dataDict[4].stats;
     console.log(dataList);
     injectHTML(dataList);
   })
 
   defensiveInterceptionsDataButton.addEventListener('click', (event) => {
-    console.log('Generate Stats');
+    console.log('Generate Defensive Int Stats');
     dataList = dataDict[5].stats;
     console.log(dataList);
     injectHTML(dataList);
   })
 
   scoringDataButton.addEventListener('click', (event) => {
-    console.log('Generate Stats');
+    console.log('Generate Scoring Stats');
     dataList = dataDict[6].stats;
     console.log(dataList);
     injectHTML(dataList);
