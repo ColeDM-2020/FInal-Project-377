@@ -216,8 +216,35 @@ async function mainEvent() {
     },
     options: {
       scales: {
+        x: {
+          display: true,
+          title: {
+            display: true,
+            text: 'Year',
+            font: {
+              family: 'Times',
+              size: 20,
+              weight: 'bold',
+              lineHeight: 1.2,
+            },
+            padding: {top: 20, left: 0, right: 0, bottom: 0}
+          }
+        },
         y: {
-          beginAtZero: true
+          beginAtZero: true,
+          display: true,
+          title: {
+            display: true,
+            text: 'Yards',
+            font: {
+              family: 'Times',
+              size: 20,
+              weight: 'bold',
+              lineHeight: 1.2
+            },
+            padding: {top: 30, left: 0, right: 0, bottom: 0}
+      
+          }
         }
       }
     }
