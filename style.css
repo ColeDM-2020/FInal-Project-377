@@ -122,6 +122,19 @@ body {
   display: flex;
 }
 
+.aboutbox{
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  width: fit-content;
+  height:fit-content;
+  margin: 0 auto;
+  flex-direction: column;
+  display: flex;
+  border: 3px solid;
+  border-color: #d50a0a;
+  text-align: left;
+}
+
 a {
   display: inline-block;
   text-decoration: none;
