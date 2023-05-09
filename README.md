@@ -13,4 +13,5 @@ My project uses Charts.js to be able to display the neccesary charts
 I used Bootstrap framework for my CSS and I used CSS3
 ### What is your actual project trying to display and solve?
 My project is trying to figure out who is the better brother Peyton Manning or Eli Manning
+
 This project does not say who is the better brother it is up to the user to descide by looking through the data
