@@ -6,7 +6,7 @@ This is meant for all browsers
 ### What API did you use, link to the API
 Link: https://gist.github.com/nntrn/ee26cb2a0716de0947a0a4e9a157bc1c
 ### What visualisations does your project drive?
-This project use charts and tables to display the data.
+This project uses charts and tables to display the data.
 ### What visualisation or other JS libraries does your project use?
 My project uses Charts.js to be able to display the neccesary charts.
 ### What CSS frameworks did you use? What version of them?
